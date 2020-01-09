@@ -11,11 +11,12 @@ import { StocksService } from './services/stocks.service';
 
 // import the app component
 import { AppComponent } from './app.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 // NgModule annotation to define a module by passing an object
 @NgModule({
   declarations: [ // declarations are to list any components and directives used in the app
-    AppComponent
+    AppComponent, SummaryComponent
   ],
   imports: [ // other modules that are used in the app
     BrowserModule,

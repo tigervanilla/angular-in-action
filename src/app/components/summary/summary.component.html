@@ -1,0 +1,24 @@
+<!-- 
+    ngClass directive is able to add or remove CSS classes to and from the element.
+    Directives are special kind of attributes
+    Directives allow you to modify the behavior and display of DOM elements in a template
+    Directives usually take an expression that is evaluated by Angular and passed to the directive
+-->
+<div class="mdl-card stock-card mdl-shadow--2dp" [ngClass]="{increase:isPositive(), decrease: isNegative()}" style="width: 100%;">
+  <span>
+    <div class="mdl-card__title">
+      <h4 style="color: #fff; margin: 0">
+        <!-- display the symbol value and convert to uppercase -->
+        {{stock?.symbol?.toUpperCase()}}<br />
+
+        <!-- 
+            ? is called "safe navigation operator"
+            It will silently fail and not display anything if the property is missing
+         -->
+        {{stock?.lastTradePriceOnly | currency:'USD':'symbol':'.2'}}<br />
+
+        {{stock?.change | currency:'USD':'symbol':'.2'}} ({{stock?.changeInPercent | percent:'.2'}})
+      </h4>
+    </div>
+  </span>
+</div>
