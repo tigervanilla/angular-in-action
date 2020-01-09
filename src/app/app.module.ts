@@ -1,8 +1,13 @@
 // import angular dependencies needed
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
+// import the app-routing module
 import { AppRoutingModule } from './app-routing.module';
+
+// import the stocks service
+import { StocksService } from './services/stocks.service';
 
 // import the app component
 import { AppComponent } from './app.component';
@@ -14,9 +19,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [ // other modules that are used in the app
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [], // Providers are any services used in the app
+  providers: [StocksService], // Providers are any services used in the app
   bootstrap: [AppComponent] // Bootstrap declares which component to use as the first to bootstrap the application
 })
 export class AppModule { }
